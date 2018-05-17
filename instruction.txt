@@ -1,0 +1,14 @@
+
+How To Use 
+Download the script. Insure that you have the proper path to python in the script. Currently, it is set to '#!/usr/bin/python' (where RedHat installs it), you may need to change that to '#!/usr/local/bin/python' if that is where you have it. Be sure to do a 'chmod +x ./mailRemove.py' on the script so that unix will execute it. 
+Become a privileged user. Become root or whatever user you need to be to manipulate the queue files. 
+Stop qmail. Any program that works on the qmail queue's will need to do this. qmail cannot deal with programs manipulating the queue while it is running. 
+Create a /var/qmail/queue/filter directory. This is where the filtered email will go. 
+Run the script as a test run. 
+For example, this would scan for emails that had the words 'annacsfun' or 'puyals98' in ANY part of the emails.
+./mailRemove.py annacsfun puyals98
+
+Run the script, FOR REAL, 
+./mailRemove.py --real annacsfun puyals98
+
+Start qmail again. You are done. 
